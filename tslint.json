@@ -16,14 +16,14 @@
     "curly": true,
     "eofline": false,
     "forin": true,
-    "indent": [ true, "spaces" ],
+    "indent": [ true, "spaces", 2],
     "interface-name": [true, "never-prefix"],
     "jsdoc-format": true,
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
     "jsx-boolean-value": ["never"],
     "label-position": true,
-    "max-line-length": [ true, 120 ],
+    "max-line-length": [ true, 140 ],
     "member-ordering": [
       true,
       "public-before-private",
@@ -45,7 +45,7 @@
 //        ],
     "no-consecutive-blank-lines": false,
     "no-construct": true,
-    "no-debugger": true,
+    "no-debugger": false,
     "no-duplicate-variable": true,
     "no-empty": true,
     "no-eval": true,
@@ -71,7 +71,6 @@
     "triple-equals": [ true, "allow-null-check" ],
     "typedef": [
       true,
-      "parameter",
       "property-declaration"
     ],
     "typedef-whitespace": [

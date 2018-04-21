@@ -3,15 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "latest",
+    "highcharts": "^6.1.0",
+    "lodash": "latest",
+    "qs": "latest",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "latest",
+    "redux": "latest",
+    "redux-thunk": "latest",
+    "semantic-ui-css": "^2.2.14",
+    "semantic-ui-react": "^0.79.1"
   },
   "devDependencies": {
+    "@types/highcharts": "^5.0.22",
     "@types/jest": "^22.2.3",
+    "@types/lodash": "^4.14.107",
     "@types/node": "^9.6.5",
+    "@types/qs": "^6.5.1",
     "@types/react": "^16.3.11",
     "@types/react-dom": "^16.0.5",
+    "@types/react-redux": "^5.0.16",
+    "@types/redux-logger": "^3.0.6",
     "react-scripts-ts": "2.15.1",
+    "redux-logger": "latest",
     "typescript": "^2.8.1"
   },
   "scripts": {
@@ -19,5 +34,6 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
-  }
+  },
+  "proxy": "https://178.62.199.42"
 }
