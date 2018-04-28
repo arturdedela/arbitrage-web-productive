@@ -26,15 +26,23 @@ class CoinsBalances extends React.Component<Props> {
             <Table.HeaderCell>Coin</Table.HeaderCell>
             <Table.HeaderCell>Amount</Table.HeaderCell>
             <Table.HeaderCell>Change</Table.HeaderCell>
+            <Table.HeaderCell>Change(%)</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
-          {_.map(this.props.coinsBalances, ({coin, amount_now, delta}, key) => (
-            <Table.Row key={key} onClick={() => this.props.openChartModal(coin)} style={{cursor: "pointer"}}>
+          {_.map(this.props.coinsBalances, ({coin, amount_now, delta, delta_percent}, key) => (
+            <Table.Row
+              key={key}
+              positive={delta > 0}
+              negative={delta < 0}
+              onClick={() => this.props.openChartModal(coin)}
+              style={{cursor: "pointer"}}
+            >
               <Table.Cell>{coin}</Table.Cell>
               <Table.Cell>{amount_now}</Table.Cell>
-              <Table.Cell positive={delta > 0} negative={delta < 0}>{delta}</Table.Cell>
+              <Table.Cell>{delta}</Table.Cell>
+              <Table.Cell>{delta_percent.toFixed(2)}%</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

@@ -1,14 +1,19 @@
 import * as React from "react";
 import * as Highcharts from "highcharts/highstock";
 import { ChartObject } from "highcharts/highstock";
+import { connect } from "react-redux";
+import { AppState } from "../../redux/types";
+import { chartRefreshed } from "../../redux/actions/refreshChart";
 
 interface Props {
   id: string
   title: string
   loadData: (date_start: number, date_end: number) => Promise<[[number, number]]>
+  refreshChart: null | { chartID: string }
+  chartRefreshed: () => any
 }
 
-export default class Chart extends React.Component<Props> {
+class Chart extends React.Component<Props> {
 
   chart: ChartObject;
 
@@ -25,6 +30,13 @@ export default class Chart extends React.Component<Props> {
     this.chart.hideLoading();
   };
 
+  componentWillReceiveProps(props: Props) {
+    if (props.refreshChart && props.refreshChart.chartID === props.id) {
+      this.requestData(Date.parse("01.01.2018"), Date.now());
+      this.props.chartRefreshed();
+    }
+  }
+
   async componentDidMount() {
     let data;
     try {
@@ -32,7 +44,6 @@ export default class Chart extends React.Component<Props> {
     } catch (e) {
       console.error(e);
     }
-    console.log(data);
 
     this.chart = Highcharts.stockChart(this.props.id, {
       title: {
@@ -91,3 +102,9 @@ export default class Chart extends React.Component<Props> {
     return  <div id={this.props.id} />
   }
 }
+
+const mapStateToProps = (state: AppState) => ({
+  refreshChart: state.refreshChart
+});
+
+export default connect(mapStateToProps, { chartRefreshed })(Chart)

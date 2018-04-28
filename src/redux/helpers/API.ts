@@ -1,10 +1,10 @@
 import axios from "axios";
 import * as qs from "qs";
-import {CoinBalance} from "../types";
+import { ArbitrageTrades, CoinBalance } from "../types";
 
 
 class API {
-  private readonly apiURL = `${window.location.origin}/api/v1`;
+  private readonly apiURL = `${window.location.origin}/api_prod/v1`;
   private api = axios.create({
     baseURL: this.apiURL
   });
@@ -38,6 +38,10 @@ class API {
     return data;
   }
 
+  async loadTrades(token: string, date_start: number, date_end: number): Promise<ArbitrageTrades> {
+    const { data } = await this.api.get("/get_trades", { params: {token, date_start, date_end} });
+    return data;
+  }
 
 }
 
