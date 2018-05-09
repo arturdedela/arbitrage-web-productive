@@ -5,6 +5,7 @@ import coinsBalances from "./coinsBalances";
 import chartModal from "./chartModal";
 import refreshChart from "./refreshChart";
 import trades from "./trades";
+import debts from "./debts";
 
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
   coinsBalances,
   chartModal,
   refreshChart,
-  trades
+  trades,
+  debts
 });

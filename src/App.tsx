@@ -7,6 +7,7 @@ import CoinsBalances from "./components/CoinsBalances";
 import ChartModal from "./components/ChartModal";
 import RefreshButton from "./components/RefreshButton";
 import Trades from "./components/Trades";
+import Debts from "./components/Debts";
 
 class App extends React.Component {
 
@@ -16,6 +17,7 @@ class App extends React.Component {
         <Menu vertical fixed="top" compact inverted>
           <Menu.Item href="#coins">Coins</Menu.Item>
           <Menu.Item href="#trades">Trades</Menu.Item>
+          <Menu.Item href="#debts">Debts</Menu.Item>
         </Menu>
 
         <RefreshButton />
@@ -29,6 +31,9 @@ class App extends React.Component {
 
           <Header id="trades" dividing textAlign="center" size="huge">Trades</Header>
           <Trades />
+
+          <Header id="debts" dividing textAlign="center" size="huge">Debts</Header>
+          <Debts />
 
           <ChartModal />
         </Container>

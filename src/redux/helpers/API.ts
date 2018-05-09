@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as qs from "qs";
-import { ArbitrageTrades, CoinBalance } from "../types";
+import { ArbitrageTrades, CoinBalance, Debt } from "../types";
 
 
 class API {
@@ -40,6 +40,11 @@ class API {
 
   async loadTrades(token: string, date_start: number, date_end: number): Promise<ArbitrageTrades> {
     const { data } = await this.api.get("/get_trades", { params: {token, date_start, date_end} });
+    return data;
+  }
+
+  async loadDebts(token: string): Promise<Debt[]> {
+    const { data } = await this.api.get("/get_debts", { params: { token } });
     return data;
   }
 

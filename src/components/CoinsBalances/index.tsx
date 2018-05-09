@@ -42,7 +42,7 @@ class CoinsBalances extends React.Component<Props> {
               <Table.Cell>{coin}</Table.Cell>
               <Table.Cell>{amount_now}</Table.Cell>
               <Table.Cell>{delta}</Table.Cell>
-              <Table.Cell>{delta_percent.toFixed(2)}%</Table.Cell>
+              <Table.Cell>{delta_percent && delta_percent.toFixed(2)}%</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

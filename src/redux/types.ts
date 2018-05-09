@@ -9,6 +9,7 @@ export type AppState = {
   coinBalanceHistory: [[Date, number]]
 
   trades: ArbitrageTrades
+  debts: Debt[]
 
   chartModal: ChartModal
 
@@ -52,3 +53,12 @@ export type ArbitrageTradesMarkets = [{
     timestamp: number
   }]
 }]
+
+export type Debt = {
+  market: string
+  trade_type: string
+  master_coin: string
+  slave_coin: string
+  price: number
+  amount: number
+}
