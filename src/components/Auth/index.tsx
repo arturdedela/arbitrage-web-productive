@@ -17,6 +17,15 @@ interface Props {
 class Auth extends React.Component<Props, State> {
   state = {login: "", password: ""};
 
+  componentWillMount() {
+    const login = localStorage.getItem("login");
+    const password = localStorage.getItem("password");
+
+    if (login && password) {
+      this.props.getToken(login, password);
+    }
+  }
+
   handleChange = (e: any, {name, value}: InputOnChangeData) => this.setState({[name]: value});
 
   submit = () => {

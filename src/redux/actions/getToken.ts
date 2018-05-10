@@ -14,7 +14,13 @@ export default function getToken(login: string, password: string) {
   return async (dispatch: any) => {
     dispatch(tokenRequest);
 
-    const response = await API.getToken(login, password);
-    dispatch(tokenSuccess(response.token));
+    try {
+      const response = await API.getToken(login, password);
+      dispatch(tokenSuccess(response.token));
+      localStorage.setItem("login", login);
+      localStorage.setItem("password", password);
+    } catch (e) {
+      console.error(e);
+    }
   };
 }
