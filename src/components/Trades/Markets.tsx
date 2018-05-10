@@ -58,12 +58,12 @@ class Markets extends React.Component<Props, State> {
               <Table.Body>
                 {_.map(markets.records, (data, key) => (
                   <Table.Row key={key}>
-                    <Table.Cell>{data.type}</Table.Cell>
+                    <Table.Cell>{data.trade_type}</Table.Cell>
                     <Table.Cell>{data.market}</Table.Cell>
-                    <Table.Cell>{data.coin_buy}</Table.Cell>
-                    <Table.Cell>{data.coin_sell}</Table.Cell>
-                    <Table.Cell>{data.price_sell}</Table.Cell>
-                    <Table.Cell>{data.amount_sell}</Table.Cell>
+                    <Table.Cell>{data.master_coin}</Table.Cell>
+                    <Table.Cell>{data.slave_coin}</Table.Cell>
+                    <Table.Cell>{data.price}</Table.Cell>
+                    <Table.Cell>{data.amount}</Table.Cell>
                     <Table.Cell>{new Date(data.timestamp).toLocaleString()}</Table.Cell>
                   </Table.Row>
                 ))}

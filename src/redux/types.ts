@@ -44,13 +44,14 @@ export type ArbitrageTradesMarkets = [{
   market_1: string
   market_2: string
   records: [{
-    type: string
+    trade_type: string
     market: string
-    coin_buy: string
-    coin_sell: string
-    price_sell: number
-    amount_sell: number
+    master_coin: string
+    slave_coin: string
+    price: number
     timestamp: number
+    trade_status: string
+    amount: number
   }]
 }]
 
