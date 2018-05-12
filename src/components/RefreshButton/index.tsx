@@ -6,11 +6,13 @@ import { loadBalance } from "../../redux/actions/loadBalance";
 import { loadCoinsBalances } from "../../redux/actions/loadCoinsBalances";
 import { refreshChart } from "../../redux/actions/refreshChart";
 import { loadTrades } from "../../redux/actions/loadTrades";
+import { loadDebts } from "../../redux/actions/loadDebts";
 
 interface Props {
   loadBalance: () => any
   loadTrades: () => any
   loadCoinsBalances: () => any
+  loadDebts: () => any
   refreshChart: (id: string) => any
 }
 
@@ -25,6 +27,7 @@ class RefreshButton extends React.Component<Props, State> {
     this.props.loadCoinsBalances();
     this.props.loadTrades();
     this.props.refreshChart("balance_chart");
+    this.props.loadDebts();
   };
 
   render() {
@@ -46,5 +49,6 @@ export default connect(null, {
   loadBalance,
   loadCoinsBalances,
   refreshChart,
-  loadTrades
+  loadTrades,
+  loadDebts
 })(RefreshButton);
