@@ -30,8 +30,8 @@ export type CoinBalance = {
 
 export type ArbitrageTrades = {
   total_data: {
-    only_first: number
-    full_trades: number
+    first: number
+    second: number
   }
   coins: [{
     coin_1: string

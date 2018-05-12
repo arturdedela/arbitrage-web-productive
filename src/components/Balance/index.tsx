@@ -9,7 +9,7 @@ interface Props {
   balance: number
   loadBalance: () => any
   loadTrades: () => any
-  tradeData: { only_first: number, full_trades: number }
+  tradeData: { first: number, second: number }
 }
 
 class Balance extends React.Component<Props> {
@@ -33,13 +33,13 @@ class Balance extends React.Component<Props> {
         <Statistic.Group widths="2" size="small">
 
           <Statistic>
-            <Statistic.Label>Full trades</Statistic.Label>
-            <Statistic.Value>{tradeData.full_trades}</Statistic.Value>
+            <Statistic.Label>First</Statistic.Label>
+            <Statistic.Value>{tradeData.first}</Statistic.Value>
           </Statistic>
 
           <Statistic>
-            <Statistic.Label>Only first</Statistic.Label>
-            <Statistic.Value>{tradeData.only_first}</Statistic.Value>
+            <Statistic.Label>Second</Statistic.Label>
+            <Statistic.Value>{tradeData.second}</Statistic.Value>
           </Statistic>
 
         </Statistic.Group>

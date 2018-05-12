@@ -29,7 +29,6 @@ class Trades extends React.Component<Props, State> {
   render() {
     const {trades} = this.props;
     const {activePairs} = this.state;
-    console.log(trades);
 
     return _.map(trades.coins, (pair, pairIndex) => {
       const active = _.indexOf(activePairs, pairIndex) >= 0;

@@ -4,8 +4,8 @@ import { AnyAction } from "redux";
 
 const initialState: ArbitrageTrades = {
   total_data: {
-    full_trades: 0,
-    only_first: 0
+    first: 0,
+    second: 0
   },
   coins: null
 };
