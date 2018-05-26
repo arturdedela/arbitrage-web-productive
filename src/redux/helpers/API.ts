@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as qs from "qs";
-import { ArbitrageTrades, CoinBalance, Debt } from "../types";
+import { ArbitrageTrades, CoinBalance, Debt, PanicResult } from "../types";
 
 
 class API {
@@ -45,6 +45,16 @@ class API {
 
   async loadDebts(token: string): Promise<Debt[]> {
     const { data } = await this.api.get("/get_debts", { params: { token } });
+    return data;
+  }
+
+  async panicSell(token: string): Promise<PanicResult> {
+    const { data } = await this.api.get("/panic_sell", { params: { token } });
+    return data;
+  }
+
+  async recoverPanicSell(token: string): Promise<PanicResult> {
+    const { data } = await this.api.get("/recover_panic_sel", { params: { token } });
     return data;
   }
 

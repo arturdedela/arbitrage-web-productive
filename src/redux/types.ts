@@ -63,3 +63,8 @@ export type Debt = {
   price: number
   amount: number
 }
+
+export type PanicResult = {
+  description: string
+  error_code: number
+}

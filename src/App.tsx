@@ -8,6 +8,7 @@ import ChartModal from "./components/ChartModal";
 import RefreshButton from "./components/RefreshButton";
 import Trades from "./components/Trades";
 import Debts from "./components/Debts";
+import { PanicSell, SellRecover } from "./components/Panic";
 
 class App extends React.Component {
 
@@ -34,6 +35,11 @@ class App extends React.Component {
 
           <Header id="debts" dividing textAlign="center" size="huge">Debts</Header>
           <Debts />
+
+          <div className="panic-buttons-container">
+            <PanicSell />
+            <SellRecover />
+          </div>
 
           <ChartModal />
         </Container>

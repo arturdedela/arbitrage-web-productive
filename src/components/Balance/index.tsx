@@ -9,7 +9,7 @@ interface Props {
   balance: number
   loadBalance: () => any
   loadTrades: () => any
-  tradeData: { first: number, second: number }
+  tradeData: { first: number, second: number, debt: number }
 }
 
 class Balance extends React.Component<Props> {
@@ -30,16 +30,21 @@ class Balance extends React.Component<Props> {
           <Statistic.Label>Balance</Statistic.Label>
         </Statistic>
 
-        <Statistic.Group widths="2" size="small">
+        <Statistic.Group widths="3" size="small">
 
           <Statistic>
-            <Statistic.Label>First</Statistic.Label>
             <Statistic.Value>{tradeData.first}</Statistic.Value>
+            <Statistic.Label>First</Statistic.Label>
           </Statistic>
 
           <Statistic>
-            <Statistic.Label>Second</Statistic.Label>
             <Statistic.Value>{tradeData.second}</Statistic.Value>
+            <Statistic.Label>Second</Statistic.Label>
+          </Statistic>
+
+          <Statistic>
+            <Statistic.Value>{tradeData.debt}</Statistic.Value>
+            <Statistic.Label>Debt</Statistic.Label>
           </Statistic>
 
         </Statistic.Group>
